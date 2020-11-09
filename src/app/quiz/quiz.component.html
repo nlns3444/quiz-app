@@ -35,7 +35,7 @@
 
   <div class="row text-center" *ngIf="mode=='review'">
     <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index;">
-      <div (click)="goTo(index)" class="p-3 mb-2 {{ ifAnswered(question) == 'Answered'? 'bg-info': 'bg-warning' }}">{{index + 1}}. {{ ifAnswered(question) }}</div>
+      <div (click)="goTo(index)" class="mg {{ ifAnswered(question) == 'Answered'? 'bg-info': 'bg-warning' }}">{{index + 1}}. {{ ifAnswered(question) }}</div>
     </div>
   </div>
   <div class="result" *ngIf="mode=='result'">
@@ -48,7 +48,7 @@
             <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}
           </div>
         </div>
-        <div class="p-1 m-2 alert {{ ifCorrect(question) == 'correct'? 'success': 'danger'}}">Your answer is {{ifCorrect(question)}}.</div>
+        <div class="msg alert {{ ifCorrect(question) == 'correct'? 'success': 'danger'}}">Your answer is {{ifCorrect(question)}}.</div>
       </div>
     </div>
   </div>
